@@ -26,8 +26,24 @@ def calculate(list: list) -> dict:
             matrix.var().tolist()
         ],
         'standard deviation': [
-            matrix.std(axis=0, dtype("float16"), ddof=0).tolist(),
-            
+            matrix.std(axis=0, dtype="float16", ddof=0).tolist(),
+            matrix.std(axis=1, dtype="float16").tolist(),
+            matrix.std(dtype="float16").tolist()
+        ],
+        'max': [
+            matrix.max(axis=0).tolist(),
+            matrix.max(axis=1).tolist(),
+            matrix.max().tolist()
+        ],
+        'min': [
+            matrix.min(axis=0).tolist(),
+            matrix.min(axis=1).tolist(),
+            matrix.min().tolist()
+        ],
+        'sum': [
+            matrix.sum(axis=0).tolist(),
+            matrix.sum(axis=1).tolist(),
+            matrix.sum().tolist()
         ]
     }
     
